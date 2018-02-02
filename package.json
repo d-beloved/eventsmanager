@@ -1,0 +1,17 @@
+{
+  "name": "eventsmanager",
+  "version": "1.0.0",
+  "description": "An Event center manager application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "PostgreSql",
+    "Sequelize"
+  ],
+  "author": "Ayodeji",
+  "license": "MIT"
+}
