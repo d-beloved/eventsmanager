@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "d-beloved",
+    "username": "D-BELOVED",
     "password": null,
-    "database": "database_development",
+    "database": "eventman-dev",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
   },
   "test": {
-    "username": "d-beloved",
+    "username": "D-BELOVED",
     "password": null,
-    "database": "database_test",
+    "database": "eventman-test",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"

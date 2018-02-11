@@ -1,4 +1,4 @@
-import  moment from 'moment';
+import moment from 'moment';
 
 export default (sequelize, DataTypes) => {
   const Event = sequelize.define('Event', {
@@ -28,7 +28,7 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Centers',
+        model: 'EventCenters',
         key: 'id'
       },
     },
@@ -44,7 +44,7 @@ export default (sequelize, DataTypes) => {
 
   Event.associate = (models) => {
     Event.belongsTo(models.User, { foreignKey: 'userId' });
-    Event.belongsTo(models.Center, { foreignKey: 'centerId' });
+    Event.belongsTo(models.EventCenter, { foreignKey: 'centerId' });
   };
 
   return Event;

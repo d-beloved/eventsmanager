@@ -1,33 +1,35 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('Users', {
+    queryInterface.createTable('EventCenters', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-      },
-      password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-      },
-      fullname: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      admin: {
-        type: Sequelize.BOOLEAN,
+      description: {
+        type: Sequelize.STRING
+      },
+      price: {
+        type: Sequelize.DOUBLE,
         allowNull: false
+      },
+      location: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          mmodel: 'Users',
+          key: 'id',
+          as: 'userId'
+        },
       },
       createdAt: {
         allowNull: false,
@@ -38,5 +40,5 @@ module.exports = {
         type: Sequelize.DATE
       },
     }),
-  down: queryInterface => queryInterface.dropTable('Users'),
+  down: queryInterface => queryInterface.dropTable('EventCenters'),
 };

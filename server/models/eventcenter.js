@@ -1,6 +1,6 @@
 
 export default (sequelize, DataTypes) => {
-  const Center = sequelize.define('Center', {
+  const EventCenter = sequelize.define('EventCenter', {
     id: {
       allowNull: false,
       primaryKey: true,
@@ -37,11 +37,11 @@ export default (sequelize, DataTypes) => {
     },
   });
 
-  Center.associate = (models) => {
-    Center.hasMany(models.Event, { as: 'events', foreignKey: 'cneterId' });
-    Center.hasMany(models.Facility, { as: 'facility', foreignKey: 'centerId' });
-    Center.belongsTo(models.User, {foreignKey: 'userId' });
+  EventCenter.associate = (models) => {
+    EventCenter.hasMany(models.Event, { as: 'events', foreignKey: 'centerId' });
+    EventCenter.hasMany(models.Facility, { as: 'facility', foreignKey: 'centerId' });
+    EventCenter.belongsTo(models.User, {foreignKey: 'userId' });
   };
 
-  return Center;
+  return EventCenter;
 };
